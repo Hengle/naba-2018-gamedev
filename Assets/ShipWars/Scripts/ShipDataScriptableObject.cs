@@ -1,12 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Questa classe serve da contenitore dati per le statistiche della
+/// navicella del giocatore.
+/// </summary>
 [CreateAssetMenu(menuName = "ShipWars/ShipData", fileName = "ShipData")]
 public class ShipDataScriptableObject : ScriptableObject {
 
-    public float speed = 0.5f;
+    // La velocità della navicella
+    public float speed = 30f;
 
+    // La massima rotazione ottenibile dalla navicella
     public float maxRoll = 45;
 
 }
