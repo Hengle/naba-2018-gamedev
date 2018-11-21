@@ -10,18 +10,37 @@ public class ShipController : MonoBehaviour {
 
     public ShipDataScriptableObject data;
 
-	// Inizializzazionedei dati
-	void Start () {
+    public Transform[] weapon1GunList;
+
+    // Inizializzazionedei dati
+    void Start() {
         // Controlla che la velocità della navicella non sia
         // negativa (i comandi sarebbero rivesciati)
-		if (data.speed < 0.1f)
+        if (data.speed < 0.1f)
         {
             data.speed = 0.1f;
         }
-
     }
 
-    void Update() {
+    private void Update()
+    {
+        UpdateMovement();
+        UpdateWeapons();
+    }
+
+    void UpdateWeapons()
+    {
+        if(Input.GetKeyDown(data.weapon1Key))
+        {
+            foreach(Transform gunTransform in weapon1GunList)
+            {
+                GameObject bullet = Instantiate(data.bullet1Prefab);
+                bullet.transform.position = gunTransform.position;
+            }
+        }
+    }
+
+    void UpdateMovement() {
         // Inizializzo il movimento verticale ed orizzontale
         // recuperando le informazioni del thumbstick
         // (che hanno un valore compreso tra -1 ed 1)

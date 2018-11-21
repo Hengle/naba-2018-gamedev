@@ -13,3 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   maxRoll: 25
+  bullet1Prefab: {fileID: 1637416175346324, guid: 325043ac01542f746826762badbadb90,
+    type: 2}
+  weapon1Key: 32
