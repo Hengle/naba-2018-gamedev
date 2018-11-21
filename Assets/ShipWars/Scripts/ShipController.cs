@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Questo componente si occupa di controllare le varie funzioni della
+/// navetta (movimento, fuoco, motori, etc.)
+/// </summary>
 public class ShipController : MonoBehaviour {
 
     public ShipDataScriptableObject data;
