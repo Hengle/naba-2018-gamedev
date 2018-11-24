@@ -21,7 +21,19 @@ public class ShipDataScriptableObject : ScriptableObject {
 
     [Header("Weapon System 1")]
 
+    // Il gameobject generato quando si spara la prima arma
     public GameObject bullet1Prefab;
 
+    // Il pulsante da tastiera per sparare la prima arma
     public KeyCode weapon1Key;
+
+    [Space]
+
+    [Header("Weapon System 2")]
+
+    // Il gameobject generato quando si spara la seconda arma
+    public GameObject bullet2Prefab;
+
+    // Il pulsante da tastiera per sparare la seconda arma
+    public KeyCode weapon2Key;
 }

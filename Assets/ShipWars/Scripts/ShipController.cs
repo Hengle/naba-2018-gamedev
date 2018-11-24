@@ -12,7 +12,7 @@ public class ShipController : MonoBehaviour {
 
     public Transform[] weapon1GunList;
 
-    // Inizializzazionedei dati
+    // Inizializzazione dei dati
     void Start() {
         // Controlla che la velocità della navicella non sia
         // negativa (i comandi sarebbero rivesciati)
@@ -22,14 +22,22 @@ public class ShipController : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Callback eseguita una volta a frame.
+    /// Aggiorna il sistema di movimento e quello di fuoco.
+    /// </summary>
     private void Update()
     {
         UpdateMovement();
         UpdateWeapons();
     }
 
+    /// <summary>
+    /// Aggiornamento del sistema di fuoco
+    /// </summary>
     void UpdateWeapons()
     {
+        // Primo sistema di armi
         if(Input.GetKeyDown(data.weapon1Key))
         {
             foreach(Transform gunTransform in weapon1GunList)
@@ -38,8 +46,21 @@ public class ShipController : MonoBehaviour {
                 bullet.transform.position = gunTransform.position;
             }
         }
+
+        // Secondo sistema di armi
+        if (Input.GetKeyDown(data.weapon1Key))
+        {
+            foreach (Transform gunTransform in weapon1GunList)
+            {
+                GameObject bullet = Instantiate(data.bullet1Prefab);
+                bullet.transform.position = gunTransform.position;
+            }
+        }
     }
 
+    /// <summary>
+    /// Aggiornamento del sistema di movimento
+    /// </summary>
     void UpdateMovement() {
         // Inizializzo il movimento verticale ed orizzontale
         // recuperando le informazioni del thumbstick
