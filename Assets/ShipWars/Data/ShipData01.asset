@@ -16,3 +16,6 @@ MonoBehaviour:
   bullet1Prefab: {fileID: 1637416175346324, guid: 325043ac01542f746826762badbadb90,
     type: 2}
   weapon1Key: 32
+  bullet2Prefab: {fileID: 1637416175346324, guid: 4e0b8765634c24fd2b0ef6bed2b33c45,
+    type: 2}
+  weapon2Key: 120

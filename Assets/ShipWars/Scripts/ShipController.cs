@@ -11,6 +11,7 @@ public class ShipController : MonoBehaviour {
     public ShipDataScriptableObject data;
 
     public Transform[] weapon1GunList;
+    public Transform[] weapon2GunList;
 
     // Inizializzazione dei dati
     void Start() {
@@ -40,6 +41,7 @@ public class ShipController : MonoBehaviour {
         // Primo sistema di armi
         if(Input.GetKeyDown(data.weapon1Key))
         {
+            
             foreach(Transform gunTransform in weapon1GunList)
             {
                 GameObject bullet = Instantiate(data.bullet1Prefab);
@@ -48,11 +50,11 @@ public class ShipController : MonoBehaviour {
         }
 
         // Secondo sistema di armi
-        if (Input.GetKeyDown(data.weapon1Key))
+        if (Input.GetKeyDown(data.weapon2Key))
         {
-            foreach (Transform gunTransform in weapon1GunList)
+            foreach (Transform gunTransform in weapon2GunList)
             {
-                GameObject bullet = Instantiate(data.bullet1Prefab);
+                GameObject bullet = Instantiate(data.bullet2Prefab);
                 bullet.transform.position = gunTransform.position;
             }
         }

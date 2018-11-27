@@ -5,13 +5,8 @@ using UnityEngine;
 public class Bullet01Controller : MonoBehaviour {
 
     public float speed = 60f;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
+    	
+	// Ad ogni frame muove il proiettile sull'asse z
 	void Update () {
         transform.Translate(0, 0, speed * Time.deltaTime);
 	}
