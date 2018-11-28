@@ -41,22 +41,22 @@ public class ShipController : MonoBehaviour {
         // Primo sistema di armi
         if(Input.GetKeyDown(data.weapon1Key))
         {
-            
-            foreach(Transform gunTransform in weapon1GunList)
-            {
-                GameObject bullet = Instantiate(data.bullet1Prefab);
-                bullet.transform.position = gunTransform.position;
-            }
+            ShootWeapon(weapon1GunList, data.bullet1Prefab);
         }
 
         // Secondo sistema di armi
         if (Input.GetKeyDown(data.weapon2Key))
         {
-            foreach (Transform gunTransform in weapon2GunList)
-            {
-                GameObject bullet = Instantiate(data.bullet2Prefab);
-                bullet.transform.position = gunTransform.position;
-            }
+            ShootWeapon(weapon2GunList, data.bullet2Prefab);
+        }
+    }
+
+    void ShootWeapon(Transform[] list, GameObject prefab)
+    {
+        foreach(Transform gunTransform in list)
+        {
+            GameObject bullet = Instantiate(prefab);
+            bullet.transform.position = gunTransform.position;
         }
     }
 
