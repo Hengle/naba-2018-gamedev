@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4463617546794076}
   - component: {fileID: 33419987427589202}
   - component: {fileID: 23969837941779750}
+  - component: {fileID: 114997366174640466}
   m_Layer: 0
   m_Name: ExplosionFx
   m_TagString: Untagged
@@ -83,3 +84,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1659169333038266}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114997366174640466
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1659169333038266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8323a4268db53d547bd09ece6e5cdcfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
