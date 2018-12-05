@@ -6,8 +6,7 @@
 /// </summary>
 public class DamageOnCollision : MonoBehaviour
 {
-    // L'effetto da generare quando si entra in collisione
-    public GameObject explosionPrefab;
+    public ObjectPoolerScriptableObject explosionPooler;
 
     // Il numero di punti ferita causati quando l'oggetto collide
     public int damageCaused = 5;
@@ -22,9 +21,9 @@ public class DamageOnCollision : MonoBehaviour
         Debug.Log("Collision with: " + collision.gameObject.name);
 
         // Se è stato definito un effetto per l'esplosione, questo viene instanziato in scena...
-        if(explosionPrefab != null)
+        if(explosionPooler != null)
         {
-            GameObject explosion = Instantiate(explosionPrefab);
+            GameObject explosion = explosionPooler.GetObject();
             // ... e posizionato dove si trova il gameobject contenente questo componente
             explosion.transform.position = transform.position;
         }
@@ -38,7 +37,11 @@ public class DamageOnCollision : MonoBehaviour
             health.Damage(damageCaused);
         }
 
-        // L'oggetto si autodistrugge, liberando memoria 
-        Destroy(gameObject);
+        Destroy();
+    }
+
+    void Destroy()
+    {
+        gameObject.SetActive(false);
     }
 }

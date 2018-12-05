@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4701458327111240}
   - component: {fileID: 33054799274003590}
   - component: {fileID: 23596959264235906}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 75861148751903806}
   - component: {fileID: 65711155990750628}
   - component: {fileID: 114191518160457682}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4132421719925838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4171644120306554}
   - component: {fileID: 33984970324756778}
   - component: {fileID: 23555168287297902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wing1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4574358721059122}
   - component: {fileID: 33325673291705914}
   - component: {fileID: 23456347808458220}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4041856046997460}
   - component: {fileID: 33534248642712356}
   - component: {fileID: 23533402441962196}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wing2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,6 +413,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de527b857cce96f4cb0c5feca85c3b99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 1659169333038266, guid: f27bf53223941ed4eaee8d09da34ba3c,
-    type: 2}
+  explosionPooler: {fileID: 11400000, guid: 49d18bb0e7852eb48bafaa7fa7d1e7cb, type: 2}
   damageCaused: 5

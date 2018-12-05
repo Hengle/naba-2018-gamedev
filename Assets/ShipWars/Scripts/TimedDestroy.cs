@@ -14,17 +14,17 @@ public class TimedDestroy : MonoBehaviour
     public float delay = 1f;
 
     /// <summary>
-    /// Allo Start del gameobject...
+    /// All'Enable del gameobject...
     /// </summary>
-	void Start ()
+	void OnEnable ()
     {
         // ... invoco la sua distruzione, dopo un ritardo
-        Invoke("DestroyObject", delay);	
+        Invoke("Destroy", delay);	
 	}
 
     // Distruggo l'oggetto
-    void DestroyObject()
+    void Destroy()
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

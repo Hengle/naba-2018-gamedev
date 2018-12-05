@@ -16,14 +16,23 @@ public class Health : MonoBehaviour {
     // che contiene questo componente
     public void Damage(int damageCaused)
     {
+        Debug.Log("Damage: " + damageCaused);
+
         // Rimuovo i punti ferita
         hitPoints -= damageCaused;
+
+        Debug.Log("Remaining hit Points: " + hitPoints);
 
         // Se il numero di punti ferita sono zero o meno...
         if(hitPoints <= 0)
         {
             // ... distruggo l'oggetto
-            Destroy(gameObject);
+            Destroy();
         }
+    }
+
+    void Destroy()
+    {
+        gameObject.SetActive(false);
     }
 }
