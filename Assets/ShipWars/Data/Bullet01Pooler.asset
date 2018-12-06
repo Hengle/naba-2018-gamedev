@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93f7850af7a73e40a23e3b007b2b36b, type: 3}
-  m_Name: Bullet1Pooler
+  m_Name: Bullet01Pooler
   m_EditorClassIdentifier: 
-  poolablePrefab: {fileID: 1637416175346324, guid: 325043ac01542f746826762badbadb90,
-    type: 2}
+  poolablePrefabs:
+  - {fileID: 1637416175346324, guid: 325043ac01542f746826762badbadb90, type: 2}

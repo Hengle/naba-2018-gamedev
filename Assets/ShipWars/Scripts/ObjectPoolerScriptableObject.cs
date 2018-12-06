@@ -5,8 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ShipWars/ObjectPooler", fileName ="ObjectPooler")]
 public class ObjectPoolerScriptableObject : ScriptableObject
 {
-    // Il prefab da cui creare i poolable objects
-    public GameObject poolablePrefab;
+    // I prefab da cui creare i poolable objects
+    public GameObject[] poolablePrefabs;
 
     // La lista dove immagazzinare e recuperare gli oggetti che
     // saranno soggetti al pooling
@@ -30,7 +30,8 @@ public class ObjectPoolerScriptableObject : ScriptableObject
             }
         }
         // ... altrimenti ne creo uno nuovo, ...
-        GameObject newGo = Instantiate(poolablePrefab);
+        GameObject prefab = poolablePrefabs[Random.Range(0, poolablePrefabs.Length)];
+        GameObject newGo = Instantiate(prefab);
         // ... lo aggiungo alla lista ...
         _list.Add(newGo);
         // ... e lo ritorno

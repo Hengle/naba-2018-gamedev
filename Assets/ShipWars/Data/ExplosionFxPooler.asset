@@ -11,5 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93f7850af7a73e40a23e3b007b2b36b, type: 3}
   m_Name: ExplosionFxPooler
   m_EditorClassIdentifier: 
-  poolablePrefab: {fileID: 1659169333038266, guid: f27bf53223941ed4eaee8d09da34ba3c,
-    type: 2}
+  poolablePrefabs:
+  - {fileID: 1659169333038266, guid: f27bf53223941ed4eaee8d09da34ba3c, type: 2}

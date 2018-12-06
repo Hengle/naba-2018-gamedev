@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 50
   maxRoll: 25
-  bullet1Prefab: {fileID: 1637416175346324, guid: 325043ac01542f746826762badbadb90,
+  bullet1ObjectPooler: {fileID: 11400000, guid: faff3157318f1ad40a7945c8f4e7397d,
     type: 2}
   weapon1Key: 32
-  bullet2Prefab: {fileID: 1637416175346324, guid: 4e0b8765634c24fd2b0ef6bed2b33c45,
+  bullet2ObjectPooler: {fileID: 11400000, guid: 6b9b9165e1d374447af9cb2407d50b44,
     type: 2}
   weapon2Key: 120
