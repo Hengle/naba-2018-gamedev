@@ -22,7 +22,9 @@ public class TimedDestroy : MonoBehaviour
         Invoke("Destroy", delay);	
 	}
 
-    // Distruggo l'oggetto
+    // L'oggetto non viene effettivamente distrutto,
+    // ma disabilitato, rendendolo disponibile di nuovo
+    // all'object pooler
     void Destroy()
     {
         gameObject.SetActive(false);

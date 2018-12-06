@@ -22,6 +22,7 @@ public class ShipDataScriptableObject : ScriptableObject
 
     [Header("Weapon System 1")]
 
+    // L'object pooler del primo proiettile
     public ObjectPoolerScriptableObject bullet1ObjectPooler;
 
     // Il pulsante da tastiera per sparare la prima arma
@@ -31,6 +32,7 @@ public class ShipDataScriptableObject : ScriptableObject
 
     [Header("Weapon System 2")]
 
+    // L'object pooler del secondo proiettile
     public ObjectPoolerScriptableObject bullet2ObjectPooler;
 
     // Il pulsante da tastiera per sparare la seconda arma

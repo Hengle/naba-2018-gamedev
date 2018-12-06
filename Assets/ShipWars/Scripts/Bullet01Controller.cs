@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet01Controller : MonoBehaviour {
 
+    // La velocità base del proiettile
     public float speed = 60f;
     	
 	// Ad ogni frame muove il proiettile sull'asse z

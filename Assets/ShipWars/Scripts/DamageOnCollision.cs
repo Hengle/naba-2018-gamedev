@@ -37,9 +37,13 @@ public class DamageOnCollision : MonoBehaviour
             health.Damage(damageCaused);
         }
 
+        // Elimino il prioettile
         Destroy();
     }
 
+    // L'oggetto non viene effettivamente distrutto,
+    // ma disabilitato, rendendolo disponibile di nuovo
+    // all'object pooler
     void Destroy()
     {
         gameObject.SetActive(false);

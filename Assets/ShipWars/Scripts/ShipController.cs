@@ -8,8 +8,10 @@ using UnityEngine;
 /// </summary>
 public class ShipController : MonoBehaviour {
 
+    // L'oggetto contenente i dati di configurazione della navetta
     public ShipDataScriptableObject data;
 
+    // Le liste di elementi che saranno le bocche di fuoco
     public Transform[] weapon1GunList;
     public Transform[] weapon2GunList;
 
@@ -53,9 +55,12 @@ public class ShipController : MonoBehaviour {
 
     void ShootWeapon(Transform[] list, ObjectPoolerScriptableObject objectPooler)
     {
+        // Per ogni bocca di fuoco...
         foreach(Transform gunTransform in list)
         {
+            // ... richiedo all'object pooler corrispondente un proiettile e...
             GameObject bullet = objectPooler.GetObject();
+            // ... lo posiziono sulla bucca di fuoco
             bullet.transform.position = gunTransform.position;
         }
     }

@@ -31,6 +31,9 @@ public class Health : MonoBehaviour {
         }
     }
 
+    // L'oggetto non viene effettivamente distrutto,
+    // ma disabilitato, rendendolo disponibile di nuovo
+    // all'object pooler
     void Destroy()
     {
         gameObject.SetActive(false);
