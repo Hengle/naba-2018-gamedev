@@ -37,7 +37,7 @@ public class DamageOnCollision : MonoBehaviour
             health.Damage(damageCaused);
         }
 
-        // Elimino il prioettile
+        // Elimino il proiettile
         Destroy();
     }
 
