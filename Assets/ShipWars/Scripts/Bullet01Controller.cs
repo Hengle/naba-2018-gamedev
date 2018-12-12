@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet01Controller : MonoBehaviour {
+public class Bullet01Controller : BulletBase {
 
     // La velocità base del proiettile
     public float speed = 60f;

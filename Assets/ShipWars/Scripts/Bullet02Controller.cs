@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet02Controller : MonoBehaviour {
+public class Bullet02Controller : BulletBase {
 
     // Quando viene abilitato, il proiettile resetta
     // la propria velocità. Dato che stiamo utilizzando un pooling

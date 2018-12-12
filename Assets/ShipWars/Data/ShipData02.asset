@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 72316a9583b770e48be40ce09afb61fb, type: 3}
-  m_Name: ShipData01
+  m_Name: ShipData02
   m_EditorClassIdentifier: 
   speed: 50
   maxRoll: 25
@@ -18,8 +18,8 @@ MonoBehaviour:
   weapon1Autofire: 0
   weapon1Key: 32
   weapon1FireInterval: 0
-  bullet2ObjectPooler: {fileID: 11400000, guid: 6b9b9165e1d374447af9cb2407d50b44,
+  bullet2ObjectPooler: {fileID: 11400000, guid: faff3157318f1ad40a7945c8f4e7397d,
     type: 2}
-  weapon2Autofire: 0
+  weapon2Autofire: 1
   weapon2Key: 120
   weapon2FireInterval: 0

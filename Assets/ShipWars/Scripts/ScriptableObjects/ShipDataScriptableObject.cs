@@ -25,8 +25,12 @@ public class ShipDataScriptableObject : ScriptableObject
     // L'object pooler del primo proiettile
     public ObjectPoolerScriptableObject bullet1ObjectPooler;
 
+    public bool weapon1Autofire;
+
     // Il pulsante da tastiera per sparare la prima arma
     public KeyCode weapon1Key;
+
+    public float weapon1FireInterval;
 
     [Space]
 
@@ -35,6 +39,11 @@ public class ShipDataScriptableObject : ScriptableObject
     // L'object pooler del secondo proiettile
     public ObjectPoolerScriptableObject bullet2ObjectPooler;
 
+    public bool weapon2Autofire;
+
     // Il pulsante da tastiera per sparare la seconda arma
     public KeyCode weapon2Key;
+
+    public float weapon2FireInterval;
+
 }
