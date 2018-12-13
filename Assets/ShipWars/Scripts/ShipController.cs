@@ -15,6 +15,7 @@ public class ShipController : MonoBehaviour {
     public Transform[] weapon1GunList;
     public Transform[] weapon2GunList;
 
+    // I countdown per tenere conto dell'intervallo di tempo tra un proiettile sparato ed il successivo
     protected float _weapon1Countdown;
     protected float _weapon2Countdown;
 
@@ -39,6 +40,10 @@ public class ShipController : MonoBehaviour {
         UpdateWeapons();
     }
 
+    /// <summary>
+    /// Calcola il tempo rimanente prima che il prossimo
+    /// proiettile possa essere sparato.
+    /// </summary>
     void UpdateFirerateCountdown()
     {
         _weapon1Countdown -= Time.deltaTime;
@@ -51,18 +56,24 @@ public class ShipController : MonoBehaviour {
     void UpdateWeapons()
     {
         // Primo sistema di armi
+        // Controllo sia la situazione di fuoco manuale, che quella di auto-fire
         if((!data.weapon1Autofire && Input.GetKeyDown(data.weapon1Key) && _weapon1Countdown <= 0) || 
             (data.weapon1Autofire && _weapon1Countdown <= 0))
         {
             ShootWeapon(weapon1GunList, data.bullet1ObjectPooler);
+
+            // Se ho sparato, reinizializzo il countdown
             _weapon1Countdown = data.weapon1FireInterval;
         }
 
         // Secondo sistema di armi
+        // Controllo sia la situazione di fuoco manuale, che quella di auto-fire
         if ((!data.weapon2Autofire && Input.GetKeyDown(data.weapon2Key) && _weapon2Countdown <= 0) ||
             (data.weapon2Autofire && _weapon2Countdown <= 0))
         {
             ShootWeapon(weapon2GunList, data.bullet2ObjectPooler);
+
+            // Se ho sparato, reinizializzo il countdown
             _weapon2Countdown = data.weapon2FireInterval;
         }
     }

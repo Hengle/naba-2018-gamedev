@@ -5,7 +5,7 @@
 /// Estende le capacità di BulletBase.
 /// </summary>
 public class Bullet01Controller : BulletBase {
-
+    
     // La velocità base del proiettile
     public float speed = 60f;
     	
