@@ -1,7 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Questo componente si preoccupa di controllare il movimento di un proiettile.
+/// Estende le capacità di BulletBase.
+/// </summary>
 public class Bullet01Controller : BulletBase {
 
     // La velocità base del proiettile
