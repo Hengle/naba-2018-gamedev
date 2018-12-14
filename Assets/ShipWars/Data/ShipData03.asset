@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72316a9583b770e48be40ce09afb61fb, type: 3}
+  m_Name: ShipData03
+  m_EditorClassIdentifier: 
+  speed: 50
+  maxRoll: 25
+  bullet1ObjectPooler: {fileID: 11400000, guid: faff3157318f1ad40a7945c8f4e7397d,
+    type: 2}
+  weapon1Autofire: 0
+  weapon1Key: 32
+  weapon1FireInterval: 0
+  bullet2ObjectPooler: {fileID: 11400000, guid: cedddb1a677164bcd8445b5df65e991b,
+    type: 2}
+  weapon2Autofire: 0
+  weapon2Key: 120
+  weapon2FireInterval: 0.5
