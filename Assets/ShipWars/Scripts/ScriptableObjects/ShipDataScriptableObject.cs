@@ -34,6 +34,8 @@ public class ShipDataScriptableObject : ScriptableObject
     // Indica il tempo che deve passare tra un proiettile sparato e quello successivo
     public float weapon1FireInterval;
 
+    public AudioClip weapon1Sfx;
+
     [Space]
 
     [Header("Weapon System 2")]
@@ -49,5 +51,7 @@ public class ShipDataScriptableObject : ScriptableObject
 
     // Indica il tempo che deve passare tra un proiettile sparato e quello successivo
     public float weapon2FireInterval;
+
+    public AudioClip weapon2Sfx;
 
 }

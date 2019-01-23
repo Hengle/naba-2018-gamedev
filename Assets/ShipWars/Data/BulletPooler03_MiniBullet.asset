@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e93f7850af7a73e40a23e3b007b2b36b, type: 3}
+  m_Name: BulletPooler03_MiniBullet
+  m_EditorClassIdentifier: 
+  poolablePrefabs:
+  - {fileID: 1637416175346324, guid: f252f68a1743b48c58e33152220d8a13, type: 2}

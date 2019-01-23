@@ -16,6 +16,12 @@ public class Health : MonoBehaviour {
     [SerializeField]
     protected int pointsWhenDestroyed = 10;
 
+    [SerializeField]
+    protected ObjectPoolerScriptableObject explosionFxPooler;
+
+    [SerializeField]
+    protected AudioClip explosionSfx;
+
     // Riferimento allo scriptable object utilizzato per gli
     // eventi interni del gioco
     public GameDataScriptableObject gameData;
@@ -46,6 +52,12 @@ public class Health : MonoBehaviour {
     // all'object pooler
     void Destroy()
     {
+        if (explosionSfx != null) SoundManager.Instance.PlaySound(explosionSfx, transform.position);
+        if(explosionFxPooler != null) 
+        {
+            GameObject explosionFx = explosionFxPooler.GetObject();
+            explosionFx.transform.position = transform.position;
+        }
         gameObject.SetActive(false);
     }
 }

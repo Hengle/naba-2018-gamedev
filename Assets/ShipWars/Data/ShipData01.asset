@@ -18,8 +18,10 @@ MonoBehaviour:
   weapon1Autofire: 0
   weapon1Key: 32
   weapon1FireInterval: 0
+  weapon1Sfx: {fileID: 8300000, guid: c09ff8a0ecfe143e7b90f2bd18897038, type: 3}
   bullet2ObjectPooler: {fileID: 11400000, guid: 6b9b9165e1d374447af9cb2407d50b44,
     type: 2}
   weapon2Autofire: 0
   weapon2Key: 120
   weapon2FireInterval: 0
+  weapon2Sfx: {fileID: 0}

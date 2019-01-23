@@ -10,7 +10,8 @@ public class Bullet01Controller : BulletBase {
     public float speed = 60f;
     	
 	// Ad ogni frame muove il proiettile sull'asse z
-	void Update () {
+	void Update ()
+    {
         transform.Translate(0, 0, speed * Time.deltaTime);
 	}
 }

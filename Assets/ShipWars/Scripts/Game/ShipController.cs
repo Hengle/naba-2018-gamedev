@@ -60,7 +60,7 @@ public class ShipController : MonoBehaviour {
         if((!data.weapon1Autofire && Input.GetKeyDown(data.weapon1Key) && _weapon1Countdown <= 0) || 
             (data.weapon1Autofire && _weapon1Countdown <= 0))
         {
-            ShootWeapon(weapon1GunList, data.bullet1ObjectPooler);
+            ShootWeapon(weapon1GunList, data.bullet1ObjectPooler, data.weapon1Sfx);
 
             // Se ho sparato, reinizializzo il countdown
             _weapon1Countdown = data.weapon1FireInterval;
@@ -71,15 +71,19 @@ public class ShipController : MonoBehaviour {
         if ((!data.weapon2Autofire && Input.GetKeyDown(data.weapon2Key) && _weapon2Countdown <= 0) ||
             (data.weapon2Autofire && _weapon2Countdown <= 0))
         {
-            ShootWeapon(weapon2GunList, data.bullet2ObjectPooler);
+            ShootWeapon(weapon2GunList, data.bullet2ObjectPooler, data.weapon2Sfx);
 
             // Se ho sparato, reinizializzo il countdown
             _weapon2Countdown = data.weapon2FireInterval;
         }
     }
 
-    void ShootWeapon(Transform[] list, ObjectPoolerScriptableObject objectPooler)
+    void ShootWeapon(Transform[] list, ObjectPoolerScriptableObject objectPooler, AudioClip sfx = null)
     {
+        if(sfx != null)
+        {
+            SoundManager.Instance.PlaySound(sfx, list[0].position);
+        }
         // Per ogni bocca di fuoco...
         foreach(Transform gunTransform in list)
         {

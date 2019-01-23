@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e93f7850af7a73e40a23e3b007b2b36b, type: 3}
-  m_Name: Explosion02FxPooler
+  m_Name: ExplosionFxPooler02
   m_EditorClassIdentifier: 
   poolablePrefabs:
   - {fileID: 1047383071739494, guid: c971fb68113f8434fad25d82171407ec, type: 2}

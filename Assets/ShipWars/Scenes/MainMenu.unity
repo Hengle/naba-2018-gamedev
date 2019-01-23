@@ -1437,6 +1437,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   message: {fileID: 868856514}
+  buttonOverSfx: {fileID: 8300000, guid: 5d42ead516db94271b7ea1eb9a6f5531, type: 3}
+  buttonClickSfx: {fileID: 8300000, guid: aaa159ab16c6a401da08d41b4c917c05, type: 3}
 --- !u!1 &1324655669
 GameObject:
   m_ObjectHideFlags: 0
