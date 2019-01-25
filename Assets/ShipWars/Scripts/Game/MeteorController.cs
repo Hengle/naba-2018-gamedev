@@ -5,7 +5,6 @@ using UnityEngine;
 public class MeteorController : MonoBehaviour
 {
 
-    [Header("Main Settings")]
     public Rigidbody meteorRb;
 
     public float minSpeed = 10f;
@@ -15,7 +14,11 @@ public class MeteorController : MonoBehaviour
     public float minScale = .5f;
     public float maxScale = 2f;
 
-	// Use this for initialization
+    private float speed;
+
+    /// <summary>
+    /// Allo start, aggiungi una rotazione casuale
+    /// </summary>
 	void Start ()
     {
         meteorRb.AddTorque(Random.Range(minRotationSpeed, maxRotationSpeed), Random.Range(minRotationSpeed, maxRotationSpeed), Random.Range(minRotationSpeed, maxRotationSpeed));
@@ -24,11 +27,12 @@ public class MeteorController : MonoBehaviour
     private void OnEnable()
     {
         transform.localScale = Vector3.one * Random.Range(minScale, maxScale);
+        speed = Random.Range(minSpeed, maxSpeed);
     }
 
     void Update()
     {
-        transform.Translate(0, 0, Random.Range(minSpeed, maxSpeed) * Time.deltaTime);
+        transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
     /// <summary>

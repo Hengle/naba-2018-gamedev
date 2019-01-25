@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Questo componente si occupa di tenere traccia dei punti ferita
@@ -16,9 +14,11 @@ public class Health : MonoBehaviour {
     [SerializeField]
     protected int pointsWhenDestroyed = 10;
 
+    // L'effetto di esplosione
     [SerializeField]
     protected ObjectPoolerScriptableObject explosionFxPooler;
 
+    // L'effetto audio di esplosione
     [SerializeField]
     protected AudioClip explosionSfx;
 
@@ -52,7 +52,10 @@ public class Health : MonoBehaviour {
     // all'object pooler
     void Destroy()
     {
+        // Emette l'effetto audio, se disponibile
         if (explosionSfx != null) SoundManager.Instance.PlaySound(explosionSfx, transform.position);
+
+        // Aggiunge l'esplosione, se disponibile
         if(explosionFxPooler != null) 
         {
             GameObject explosionFx = explosionFxPooler.GetObject();
