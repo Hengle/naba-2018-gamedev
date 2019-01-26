@@ -178,10 +178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311b9fb2c2439864bb03c770d7affdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 10
+  hitPoints: 1
   pointsWhenDestroyed: 10
   explosionFxPooler: {fileID: 11400000, guid: 891b36a7208ec417d8254d785ab482f8, type: 2}
-  explosionSfx: {fileID: 8300000, guid: 35d2f234589f441e38ba7cc5908bef71, type: 3}
+  explosionSfx: {fileID: 8300000, guid: 6a4d43e4cc72e47e1a9e2bc2e3c53108, type: 3}
   gameData: {fileID: 11400000, guid: 2b3e757aacca84180a0944d7041b9853, type: 2}
 --- !u!114 &114070739012815878
 MonoBehaviour:
@@ -195,8 +195,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meteorRb: {fileID: 54305276015851104}
-  minSpeed: 10
-  maxSpeed: 30
+  minSpeed: 15
+  maxSpeed: 50
   minRotationSpeed: -25
   maxRotationSpeed: 25
   minScale: 0.5

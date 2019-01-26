@@ -1757,8 +1757,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPooler: {fileID: 11400000, guid: 4ef1ea5f7b41043e3b1159e87ed36962, type: 2}
-  minSpawnTime: 1
-  maxSpawnTime: 3
+  minSpawnTime: 0.5
+  maxSpawnTime: 2
   active: 1
   spawnBox: {fileID: 1499230430}
 --- !u!4 &1499230429
