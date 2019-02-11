@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour {
     private void Start()
     {
         gameData.SetPoints(0);
+        UpdateData();
     }
 
     /// <summary>
@@ -44,6 +45,6 @@ public class GameController : MonoBehaviour {
     /// </summary>
     public void UpdateHealth()
     {
-
+        healthBar.value = gameData.GetPlayerHealthPercent();
     }
 }

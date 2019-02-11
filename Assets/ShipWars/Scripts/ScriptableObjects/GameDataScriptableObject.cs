@@ -76,5 +76,21 @@ public class GameDataScriptableObject : ScriptableObject
         return _points;
     }
 
+    protected float _playerHealthPercent = 1;
+
+    public void SetPlayerHealthPercent(float healthPercent)
+    {
+        _playerHealthPercent = healthPercent;
+        if(healthPercent <= 0)
+        {
+            Debug.Log("Game Over");
+        }
+        Raise();
+    }
+    public float GetPlayerHealthPercent()
+    {
+        return _playerHealthPercent;
+    }
+
     #endregion
 }

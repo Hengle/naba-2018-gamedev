@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnController : MonoBehaviour
@@ -11,7 +10,7 @@ public class EnemySpawnController : MonoBehaviour
     public float minSpawnTime = 2f;
     public float maxSpawnTime = 10f;
 
-    // Indica se 
+    // Indica se lo spawner è attivo (e quindi genera oggetti)
     public bool active = true;
 
     // Questo collider, se presente, viene utilizzato come zona di spawn
@@ -23,12 +22,14 @@ public class EnemySpawnController : MonoBehaviour
         if (active) StartSpawning();
     }
 
+    // Comincia a generare gli oggetti
     public void StartSpawning()
     {
         active = true;
         StartCoroutine("Spawn");
     }
 
+    // Ferma la generazione degli oggetti
     public void StopSpawning()
     {
         active = false;
@@ -41,9 +42,15 @@ public class EnemySpawnController : MonoBehaviour
     {
         while(active)
         {
+            // Aspetto un periodo calcolato a caso
             yield return new WaitForSeconds(Random.Range(minSpawnTime, maxSpawnTime));
+
+            // Recupero dal pooler l'oggetto generato
             GameObject enemyGo = enemyPooler.GetObject();
             float posX = transform.position.x;
+
+            // Dal collider (spawnBox) recupero un punto a caso, che sarà
+            // la posizione di generazione dell'oggetto
             if(spawnBox != null)
             {
                 float min = spawnBox.bounds.min.x;
@@ -51,6 +58,8 @@ public class EnemySpawnController : MonoBehaviour
                 posX = transform.position.x + Random.Range(min, max);
             }
             enemyGo.transform.position = new Vector3(posX, transform.position.y, transform.position.z);
+            Quaternion rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+            enemyGo.transform.rotation = rotation;
         }
     }
 }

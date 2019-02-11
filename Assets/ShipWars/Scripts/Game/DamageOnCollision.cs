@@ -6,10 +6,19 @@
 /// </summary>
 public class DamageOnCollision : MonoBehaviour
 {
-    public ObjectPoolerScriptableObject explosionPooler;
-
     // Il numero di punti ferita causati quando l'oggetto collide
     public int damageCaused = 5;
+
+    // Definisce se l'oggetto deve essere distrutto quando colpisce un bersaglio
+    public bool destroyOnHit = true;
+
+    // L'effetto di esplosione
+    [SerializeField]
+    protected ObjectPoolerScriptableObject explosionFxPooler;
+
+    // L'effetto audio di esplosione
+    [SerializeField]
+    protected AudioClip explosionSfx;
 
     /// <summary>
     /// Questa callback viene chiamata se l'oggetto (che deve possedere un Collider)
@@ -20,14 +29,6 @@ public class DamageOnCollision : MonoBehaviour
     {
         Debug.Log("Collision with: " + collision.gameObject.name);
 
-        // Se è stato definito un effetto per l'esplosione, questo viene instanziato in scena...
-        if(explosionPooler != null)
-        {
-            GameObject explosion = explosionPooler.GetObject();
-            // ... e posizionato dove si trova il gameobject contenente questo componente
-            explosion.transform.position = transform.position;
-        }
-
         // Recupero il componente Health del gameobject con cui sono entrato in collisione e,...
         Health health = collision.gameObject.GetComponent<Health>();
         // ... se esiste...
@@ -37,8 +38,11 @@ public class DamageOnCollision : MonoBehaviour
             health.Damage(damageCaused);
         }
 
-        // Elimino il proiettile
-        Destroy();
+        if(destroyOnHit)
+        {
+            // Elimino il proiettile
+            Destroy();
+        }
     }
 
     // L'oggetto non viene effettivamente distrutto,
@@ -46,6 +50,15 @@ public class DamageOnCollision : MonoBehaviour
     // all'object pooler
     void Destroy()
     {
+        // Emette l'effetto audio, se disponibile
+        if (explosionSfx != null) SoundManager.Instance.PlaySound(explosionSfx, transform.position);
+
+        // Aggiunge l'esplosione, se disponibile
+        if (explosionFxPooler != null)
+        {
+            GameObject explosionFx = explosionFxPooler.GetObject();
+            explosionFx.transform.position = transform.position;
+        }
         gameObject.SetActive(false);
     }
 }

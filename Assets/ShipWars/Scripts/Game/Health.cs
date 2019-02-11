@@ -5,7 +5,10 @@
 /// di un gameobject
 /// </summary>
 public class Health : MonoBehaviour {
-    
+
+    // Il numero di punti ferita all'inizio della partita
+    protected int _startingHitPoints = 10;
+
     // Il numero di punti ferita
     [SerializeField]
     protected int hitPoints = 10;
@@ -26,24 +29,37 @@ public class Health : MonoBehaviour {
     // eventi interni del gioco
     public GameDataScriptableObject gameData;
 
+    private void Start()
+    {
+        _startingHitPoints = hitPoints;
+        gameData.SetPlayerHealthPercent(1);
+    }
+
     // Questo metodo, permette di aggiungere un danno al gameobject
     // che contiene questo componente
     public void Damage(int damageCaused)
     {
-        Debug.Log("Damage: " + damageCaused);
+        // Debug.Log("Damage: " + damageCaused);
 
         // Rimuovo i punti ferita
         hitPoints -= damageCaused;
 
-        Debug.Log("Remaining hit Points: " + hitPoints);
-
+        // Debug.Log("Remaining hit Points: " + hitPoints);
+        int enemiesPlayer = LayerMask.NameToLayer("Enemies");
         // Se il numero di punti ferita sono zero o meno...
-        if(hitPoints <= 0)
+        if(hitPoints <= 0 && gameObject.layer == enemiesPlayer)
         {
             // ... aggiungo i punti ai dati di gioco e ...
             gameData.AddPoints(pointsWhenDestroyed);
             // ... distruggo l'oggetto
             Destroy();
+        } else
+        {
+            gameData.SetPlayerHealthPercent((float)hitPoints / (float)_startingHitPoints);
+            if(hitPoints <= 0)
+            {
+                Destroy();
+            }
         }
     }
 
@@ -61,6 +77,9 @@ public class Health : MonoBehaviour {
             GameObject explosionFx = explosionFxPooler.GetObject();
             explosionFx.transform.position = transform.position;
         }
+        // Disabilito l'oggetto
         gameObject.SetActive(false);
+        // resetto i punti ferita
+        hitPoints = _startingHitPoints;
     }
 }

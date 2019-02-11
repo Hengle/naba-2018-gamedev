@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33500729060020106}
   - component: {fileID: 23916735812557938}
   - component: {fileID: 54017348126035932}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: meteorFullRound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,9 @@ GameObject:
   - component: {fileID: 114844233774293790}
   - component: {fileID: 114154955233704252}
   - component: {fileID: 23687210369734330}
-  m_Layer: 0
+  - component: {fileID: 114597101870617154}
+  - component: {fileID: 54782728566683892}
+  m_Layer: 10
   m_Name: Meteor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,6 +169,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 14
   m_CollisionDetection: 0
+--- !u!54 &54782728566683892
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338781169036808}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 6
+  m_CollisionDetection: 0
 --- !u!114 &114154955233704252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,6 +202,21 @@ MonoBehaviour:
   maxRotationSpeed: 25
   minScale: 0.5
   maxScale: 2
+--- !u!114 &114597101870617154
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1338781169036808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de527b857cce96f4cb0c5feca85c3b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageCaused: 5
+  destroyOnHit: 1
+  explosionFxPooler: {fileID: 11400000, guid: 891b36a7208ec417d8254d785ab482f8, type: 2}
+  explosionSfx: {fileID: 0}
 --- !u!114 &114844233774293790
 MonoBehaviour:
   m_ObjectHideFlags: 1
