@@ -2,7 +2,7 @@
 
 ## Game Development
 
-Progetto per il corso serale di GameDevelopment.
+Progetto per il corso serale di GameDevelopment presso la [Nuova Accademia di Belle Arti](https://www.naba.it/) di Milano.
 
 ## Credits
 
